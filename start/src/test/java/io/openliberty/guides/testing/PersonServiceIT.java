@@ -33,7 +33,7 @@ public class PersonServiceIT {
     
     @BeforeAll
     public static void setupLibertyContainer() {
-        System.out.println("INFO: Doing Liberty Container setup");
+        System.out.println("INFO: Starting Liberty Container setup");
         personSvc = libertyContainer.createRestClient(PersonService.class, APP_PATH);
     }
 

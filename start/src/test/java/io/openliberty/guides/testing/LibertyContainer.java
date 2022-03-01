@@ -3,6 +3,7 @@ package io.openliberty.guides.testing;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.cxf.jaxrs.provider.jsrjsonb.JsrJsonbProvider;
 import org.apache.cxf.jaxrs.client.JAXRSClientFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,7 @@ public class LibertyContainer extends GenericContainer<LibertyContainer> {
 
     public <T> T createRestClient(Class<T> clazz, String applicationPath) {
         List<Class<?>> providers = new ArrayList<>();
-        providers.add(JsonBProvider.class);
+        providers.add(JsrJsonbProvider.class);
         String urlPath = getBaseURL();
         if (applicationPath != null)
             urlPath += applicationPath;
