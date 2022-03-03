@@ -24,7 +24,9 @@ public class LibertyContainer extends GenericContainer<LibertyContainer> {
 
     public <T> T createRestClient(Class<T> clazz, String applicationPath) {
         List<Class<?>> providers = new ArrayList<>();
+        System.out.println("DEBUG: About to create the rest client");
         providers.add(JsrJsonbProvider.class);
+        System.out.println("DEBUG: Finish creating the rest client");
         String urlPath = getBaseURL();
         if (applicationPath != null)
             urlPath += applicationPath;
